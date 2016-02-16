@@ -1,0 +1,80 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*基础类*/
+	.hlb-iframebtn5{border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    width:108px; height:31px; overflow:hidden; font-size:14px; background:url(../Content/Newicons/hlb-btn.png) no-repeat; text-align:center; color:#fff; font-size:14px; cursor:pointer; margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 0px;
+}/*5-6个字大按钮 红色*/
+	.hlb-iframebtn51{width:108px; height:31px; overflow:hidden; border:none;font-size:14px; background:url(../Content/Newicons/hlb-btn2.png) no-repeat; text-align:center; color:#fff; font-size:14px; cursor:pointer; margin:0px 3px}/*5-6个字大按钮 青色*/
+	.hlb-iframebtn5s{width:95px; height:33px; overflow:hidden; border:none;font-size:14px; background:url(../Content/Newicons/hlb-btnS.png) no-repeat; text-align:center; color:#fff; font-size:14px; cursor:pointer; margin:0px 3px}/*2-4个字大按钮 红色*/
+	.hlb-iframebtn5_1s{width:95px; height:33px; overflow:hidden; border:none;font-size:14px; background:url(../Content/Newicons/hlb-btn2S.png) no-repeat;text-align:center; color:#fff; font-size:14px; cursor:pointer; margin:0px 3px}/*2-4个字大按钮 青色*/
+	
+/*搜索*/
+	.hlb_selectbox{width:100%; height:auto; overflow:hidden}
+		.hlb_select{width:100%; height:auto; overflow:hidden; padding:10px; background:#fff; display:none}
+		.hlb_select ul li{display:inline-block;zoom:1;*display:inline; padding:0px 5px; float:left; height:35px; line-height:35px; font-size:14px}
+		.hlb_selectbox_btn{width:100%; height:auto; overflow:hidden}
+			.hlb_selectbox_btn{width:100px; height:28px; overflow:hidden; float:right; margin:0px 10px; cursor:pointer}
+			.hlb-text{height:30px; line-height:30px; border:2px solid #e3ebf0;color: black;}
+			.hlb-texthou{height:30px; line-height:30px; border:2px solid #becbd3}
+			.hlb_select select{ margin:8px 0px}
+/*列表标题*/
+	.hlb-title{width:100%; height:auto; overflow:hidden; margin:10px 0px; position:relative}
+		.hlb-title h1{width:100%; height:55px; overflow:hidden; background:url(../Content/Newicons/hlb-04.png) no-repeat 10px 10px; font-size:18px; font-family:Verdana, Geneva, sans-serif,"微软雅黑"; padding:0px 40px; line-height:55px; color:#424242}
+		.hlb-title ul{width:auto; height:55px; position:absolute; top:12px; right:0px}
+		.hlb-title ul li{display:inline-block;zoom:1;*display:inline; padding:0px 5px; float:left; height:35px; line-height:35px; font-size:14px}
+/*列表框架*/
+	.hlb-listbox{width:98%; height:auto; overflow:hidden; padding-bottom:9px; background:#c2c2c2; position:relative; margin:0px 1%}
+		/*外圆角*/
+		.hlb-listbox b{width:10px; height:9px; overflow:hidden; display:block; position:absolute;background:url(../Content/Newicons/hlb-listyj.gif) no-repeat;}
+		.hlb-listbox b.LB{ background-position:0px 0px; bottom:0px; left:0px}
+		.hlb-listbox b.RB{ background-position:-10px 0px; bottom:0px; right:0px}
+		/*内框*/
+		.hlb-listboderbox{width:auto; height:auto; overflow:hidden; position:relative; background:#fff;margin: -2px -2px 0px -2px; }
+			.hlb-listboderbox b{width:14px; height:14px; overflow:hidden; display:block; position:absolute;background:url(../Content/Newicons/hlb-listborderyj.gif) no-repeat;}
+			.hlb-listboderbox b.L{ background-position:0px 0px; top:0px; left:0px; left: 2px\9; top:1px\9;}
+			.hlb-listboderbox b.R{ background-position:-14px 0px; top:0px; right:0px;top:2px\9 ;right:4px\9;}
+			.hlb-listboderbox b.LB{ background-position:0px -14px; bottom:0px; left:0px;bottom: 8px\9;}
+			.hlb-listboderbox b.RB{ background-position:-14px -14px; bottom:0px; right:0px;bottom: 7px\9;right: 3px\9;}
+		/*分页*/
+		.hlb-pagesize{width:auto; height:50px; overflow:hidden; background:#d3e6f4; border:1px solid #c9c7c7; border-top:1px solid #fff; text-align:center;margin: 0px -3px -2px -3px;}
+			.hlb-pagesize ul{text-align:center;line-height:50px; vertical-align: middle;}
+			.hlb-pagesize ul li{display:inline-block;zoom:1;*display:inline; padding:0px 5px;  line-height:50px; vertical-align: middle;}
+			.hlb-pagesizenum{border:1px solid #CCC;color: black;width: 25px;height: 20px; margin: 0px 0px 0px 5px; padding: 0px 0px 3px 0px;}
+			.hlb-pagesizebtn{width:43px; height:21px; overflow:hidden; border:none; background:url(../Content/Newicons/hlb-btnSelect.png) no-repeat; text-align:center; line-height:21px; color:#fff; margin:5px 0px}
+		/*数据表格*/
+		.hlbdata-list{background:#c9c7c7; line-height:30px}
+			.hlbdata-list tr td{background:#fff; height: 30px;}
+			.hlbdata-list tr td a{height: 25px;}
+			.hlbdata-list tr.title td{height:45px; background:#d3e6f4; font-size:14px; text-align:center; font-size:14px; color:#2a5573; font-weight:bold}
+			.hlbdata-list tbody tr th{height:45px; background:#d3e6f4; font-size:14px; text-align:center; font-size:14px; color:#2a5573; font-weight:bold}
+			.hlbdata-listbtn{width:47px; height:22px; overflow:hidden; border:none; background:url(../Content/Newicons/hlb-listbtn.png) no-repeat; line-height:22px; text-align:center; color:#fff; margin:0px 2px}
+			.hlbdata-listredbtn{width:47px; height:22px; overflow:hidden; border:none; background:url(../Content/Newicons/hlb-listredbtn.png) no-repeat; line-height:22px; text-align:center; color:#fff; margin:0px 2px}
+		/*弹出层*/
+		.black_overlay{display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index:1001;-moz-opacity: 0.8;opacity:.80;filter: alpha(opacity=80);
+}
+		.hlb-pagebtn
+		{
+		cursor:pointer;
+		border:0px;
+		border-color: none;
+		background: none;
+		font-size: 12px;
+        color: black;
+		}
+
+		/*显示层*/
+.white_content {display: none;position: absolute;top: 20%;left: 20%;width: 60%;height: 60%;border: 3px solid #5c839b;background-color:#fff;z-index:1002;overflow: auto; padding:1px}
+.white_content_small {display: none;position: absolute;top: 20%;left: 30%;
+width: 40%;height:auto;border: 16px solid lightblue;background-color: white;
+z-index:1002;overflow: auto;}
+.hlb-listtitle{width:auto; height:42px; overflow:hidden; background:url(../Content/Newicons/hlb-listtitle.gif) repeat-x; line-height:42px; position:relative; overflow:hidden; text-align:center; font-size:16px; color:#2e414e; font-weight:bold}
+.hlb-listclose{position:absolute; top:10px; right:10px; cursor:pointer}
+	/*表格*/
+	.hlb-dateview{width:98%; height:auto; overflow:hidden; margin:1%; background:#9db4c3; line-height:35px}
+	.hlb-dateview td{background:#fff; padding:0px 5px}
+	.hlb-dateview td.colow{background:#d6e7f1}
+	.hlb-dateviewinput{border:1px solid #b2c9d6; height:25px; line-height:25px}

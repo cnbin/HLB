@@ -1,0 +1,21 @@
+select companyid, sum(欠费) 欠费,SUM(缴费) 缴费, SUM(总消费) 总消费, SUM(总消费)+sum(欠费)-SUM(缴费) 合计 from
+(
+select b.CompanyID, SUM(Amount) 欠费, 0  缴费,0 总消费 from W_Dy_CompanyAccount b where AccountID='1AE7A6A2-EC83-43BD-9B01-6BBEB7C30723' --欠费
+group by b.CompanyID
+union all
+select c.CompanyID,0 欠费, sum(amount) 缴费,0 总消费 from W_Dy_Paymentinfo c where AccountID='1AE7A6A2-EC83-43BD-9B01-6BBEB7C30723'--缴费
+group by CompanyID
+UNion all
+select d.CompanyID,0,0 ,SUM(amount) from W_Dy_Receivable_Electricity d where CostTypeID='1AD794B4-AEE8-4D2A-8EDB-2B75F77FF84B'--实际总费用
+group by CompanyID
+) a
+group by companyid
+having SUM(总消费)+sum(欠费)-SUM(缴费)<0
+
+
+
+select b.CompanyID, SUM(Amount) 欠费, 0  缴费,0 总消费 from W_Dy_CompanyAccount b where AccountID='1AE7A6A2-EC83-43BD-9B01-6BBEB7C30723' --欠费
+group by b.CompanyID
+union all
+select c.CompanyID,0 欠费, sum(amount) 缴费,0 总消费 from W_Dy_Paymentinfo c where AccountID='1AE7A6A2-EC83-43BD-9B01-6BBEB7C30723'--缴费
+group by CompanyID

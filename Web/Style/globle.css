@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; font-family:Verdana, Geneva, sans-serif,"宋体";}
+body{font-size:12px; background:#e6e4e4}
+h1,h2,h3,h4{ font-size:12px;}h2,h2 span{ font-size:14px;}h3 span{ font-size:12px;}h2 a{font-size:12px;}
+img,input{ vertical-align:middle;}
+img{ border:none;}
+ul,li{ list-style:none;}
+a{ text-decoration:none; color:#000;position:relative;position:static\9;}a:hover{ color:#f54501; cursor:pointer}
+.clear{ clear:both; height:1px; font-size:12px} 
+strong.red{color:#ee0206}
+strong.red a{color:#ee0206}
+/*主框架*/
+.hlb-topcap{width:100%; height:77px; overflow:hidden; background:#1470aa}
+	.hlb-topcap-logo{width:100%; height:77px; overflow:hidden;background:#0d5989; float:left}
+	.hlb-topcap-logo img{ margin: 0px; padding: 0px; margin-top: 10px;}
+	.hlb-topcap-message{width:285px; height:35px; overflow:hidden; background:url(../Content/Newicons/01.gif) no-repeat; float:right; margin:17px 10px; padding:0px 10px; color:#fff; line-height:35px; }
+	.hlb-topcap-message a{color:#fff}
+	.hlb-topcap-message ul.text{width:160px; height:35px; overflow:hidden; float:left;vertical-align: middle;line-height: 35px;font-size: 13px;}
+	.hlb-topcap-message ul.ico{width:60px; height:35px; float:right}
+	.hlb-topcap-message ul.ico img{margin:8px 6px}
+	/*菜单*/
+	.hlb-mune{width:100%; height:61px; background:#3498db;}
+		.hlb-mune ul{width:auto; height:55px; line-height:50px; margin:5px 5px;  float: left; }
+		.hlb-mune ul li{display:inline-block;zoom:1;*display:inline; padding:0px 20px; float:left; height:50px; line-height:50px; color:#fff; margin:5px 5px; font-size:14px}
+		.hlb-mune ul li.over{ background:#0d5989; 
+							-moz-border-radius:15px;
+							-webkit-border-radius: 15px;   /* Webkit browsers */ 
+						border-radius:40px; }
+		.hlb-mune ul li a{color:#fff}
+		.hlb-mune ul li b{width:15px; height:15px; overflow:hidden; display:block; position:absolute;background:url(../../Content/Newicons/hlb-yj.png) no-repeat;}
+		.hlb-mune ul li b.L{ background-position:0px 0px; top:0px; left:0px}
+		.hlb-mune ul li b.R{ background-position:-15px 0px; top:0px; right:1px}
+		.hlb-mune ul li b.LB{ background-position:0px -15px; bottom:0px; left:0px}
+		.hlb-mune ul li.RB{ background-position:-15px -15px; bottom:0px; right:1px}
+	/*树状菜单*/
+	.hlb-treemune{width:20%; height:100%; min-height:554px;float:left; background:#d2dde3; overflow:hidden}
+	/*内容容器*/
+	.hlb-contact{width:100%;height:auto; float:left;overflow:hidden; min-height:30px;}
+	/*面包屑*/
+	.hlb-navmune{width:40%; height:51px; overflow:hidden; background:#d2dce3;float:left;}
+	.hlb-navmune-return{width: 60%; height: 41px; vertical-align: middle;float:right;background:#d2dce3;margin: 0px;padding: 10px 0px 0px 0px; text-align:right;}
+	.hlb-navmune ul.hlb-navmunebtn{width:22px; height:18px; overflow:hidden; float:left; margin:15px 5px; cursor:pointer}
+	.hlb-navmune ul.hlb-navmunehome{width:22px; height:18px; overflow:hidden; float:left; margin:14px 5px;}
+	.hlb-navmune ul.hlb-navmunelink{width:auto; height:51px; overflow:hidden; float:left; margin:0px 5px; line-height:51px}
+	.hlb-navmune ul.hlb-navmunelink a{padding:0px 5px}
+	.hlb-nav{margin: 30px 0px 0px 0px; }
+    .hlb-Tree-table{ width:100%;}
+    .hlb-Tree-table tr td{ width:50%; text-align:center; height:40px;}
+    .hlb-Tree-table tr td input{color:#fff;}
+

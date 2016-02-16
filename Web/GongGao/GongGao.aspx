@@ -1,0 +1,276 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GongGao.aspx.cs" Inherits="GongGao_GongGao" %>
+
+<html>
+<head>
+    <title>
+        <%=System.Configuration.ConfigurationManager.AppSettings["SYSTitle"]%></title>
+    <link href="../Style/Style.css" type="text/css" rel="STYLESHEET">
+      <link href="../Style/globle.css" rel="stylesheet" type="text/css" />
+         <link href="../Style/iframestyle.css" rel="stylesheet" type="text/css" />
+     <script type="text/javascript" src="../JS/NewSearch.js"></script>
+</head>
+<script language="JavaScript">
+    var a;
+    function CheckValuePiece() {
+        if (window.document.form1.GoPage.value == "") {
+            alert("请输入跳转的页码！");
+            window.document.form1.GoPage.focus();
+            return false;
+        }
+        return true;
+    }
+
+    function CheckAll() {
+        var inputs = document.getElementById('GVData').getElementsByTagName("Input");
+        if (a == 1) {
+            for (var i = 0; i < inputs.length; i++) {
+                var e = inputs[i];
+                e.checked = false;
+            }
+            a = 0;
+        }
+        else {
+            for (var i = 0; i < inputs.length; i++) {
+                var e = inputs[i];
+                e.checked = true;
+            }
+            a = 1;
+        }
+    }
+    function CheckDel() {
+        var number = 0;
+        var inputs = document.getElementById('GVData').getElementsByTagName("Input");
+        for (var i = 0; i < inputs.length; i++) {
+            var e = inputs[i];
+            if (e.Name != "CheckBoxAll") {
+                if (e.checked == true) {
+                    number = number + 1;
+                }
+            }
+        }
+
+        if (number == 0) {
+            alert("请选择需要删除的项！");
+            return false;
+        }
+        if (window.confirm("你确认删除吗？")) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function CheckModify() {
+
+        var Modifynumber = 0;
+        var inputs = document.getElementById('GVData').getElementsByTagName("Input");
+        for (var i = 0; i < inputs.length; i++) {
+            var e = inputs[i];
+            if (e.Name != "CheckBoxAll") {
+                if (e.checked == true) {
+                    Modifynumber = Modifynumber + 1;
+                }
+            }
+        }
+        if (Modifynumber == 0) {
+            alert("请至少选择一项！");
+            return false;
+        }
+        if (Modifynumber > 1) {
+            alert("只允许选择一项！");
+            return false;
+        }
+
+        return true;
+    }
+    function SendPerson()
+    {
+        var inputs = document.getElementById('ListTreeView').getElementsByTagName("Input");
+        var PersonList = document.getElementById('PersonList');
+        for (var i = 0; i < inputs.length; i++) {
+            var e = inputs[i];
+            if (e.Name != "CheckBoxAll") {
+                if (e.checked == true) {
+                    PersonList.value += PersonList.value == "" ? e.title : "," + e.title;
+                }
+            }
+        }
+    }
+             
+             
+</script>
+    
+<body onload="Load_Select();">
+    <form id="form1" runat="server">
+    <div>
+        <table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                <td valign="middle"  style="height:30px;">
+                        <div class="hlb-contact">
+                            <div class="hlb-navmune"style="width:100%;">
+                                <ul class="hlb-navmunebtn">
+                                    <a href="javascript:void(0);" onclick="hidemenu()"><img src="../Content/Newicons/hlb-01.png"  /></a>
+                                </ul>
+                                <ul class="hlb-navmunehome">
+                                    <img src="../Content/Newicons/hlb-02.png" />
+                                </ul>
+                                <ul class="hlb-navmunelink">
+                                    当前位置：网站首页&nbsp;-&nbsp;个人办公&nbsp;-&nbsp;通知公告&nbsp;
+                                </ul>
+                            </div>
+                             
+                    </td> 
+            </tr>
+         <tr>
+             <td>
+                  <div class="hlb-contact">
+            <div class="hlb_selectbox">
+        	<!--搜索框-->
+            <div id="hlb_select" runat="server" class="hlb_select">
+            	<ul>
+                	<li>信息主题：</li><li><li><asp:TextBox ID="TextBox1" runat="server" CssClass="hlb-text"></asp:TextBox>
+                        <input type="hidden" runat="server" id="tb1_value" value="" />
+                	                  </li>
+                    <li><asp:Button runat="server" id="btn_Search"  Cssclass="hlb-iframebtn5s"  Text="搜索" OnClick="btn_Search_Click"></asp:Button></li>
+                </ul>
+            </div>
+                  <input type="hidden"  id="hidden_input" runat="server" value="none"/>
+            <div class="hlb_selectbox_btn" onclick="HideSearch()"><img src="../Content/Newicons/hlb-03.png" /></div>
+                 </div>
+        </div>
+             </td>
+         </tr>
+        </table>
+
+         <div class="hlb-title">
+            	<h1>通知公告</h1>
+                <ul>
+                	<li><asp:Button  id="btn_Add" runat="server" Cssclass="hlb-iframebtn5"  Text="添加" OnClick="btn_Add_Click" OnClientClick="SendPerson();"></asp:Button><input id="PersonList" runat="server" value="" type="hidden" /></li>
+                 <li><asp:Button  id="btn_Change" runat="server" Cssclass="hlb-iframebtn5"  Text="修改" OnClick="btn_Change_Click"  OnClientClick=" javascript:return CheckModify()"></asp:Button></li>
+                    <li><asp:Button  id="btn_Del" runat="server" Cssclass="hlb-iframebtn5"  OnClientClick="javascript:return CheckDel();"  Text="删除" OnClick="btn_Del_Click"></asp:Button></li>
+                <li><asp:Button runat="server" id="btn_Report" Cssclass="hlb-iframebtn5"  Text="导出" OnClick="btn_Report_Click"></asp:Button></li>
+                </ul>
+            </div>
+     
+    <table style="width:100%">
+        <tr>
+            <td style="width:15%; vertical-align:top;">
+                <asp:TreeView ID="ListTreeView" runat="server" onclick="OnTreeNodeChecked();" ShowCheckBoxes="All"
+                        ShowLines="True" ExpandDepth="1" Font-Bold="False">
+                    </asp:TreeView>
+            </td>
+            <td  style=" vertical-align:top;"">
+                <div class="hlb-listbox">
+               <b class="LB"></b><b class="RB"></b>
+               <div class="hlb-listboderbox">
+                     <b class="L"></b><b class="R"></b>
+                	<b class="LB"></b><b class="RB"></b> 
+                 <table style="width: 100%">
+        <tr>
+            <td>
+                <asp:GridView ID="GVData" runat="server" AutoGenerateColumns="False" AllowPaging="True" AllowSorting="True"
+                    OnRowDataBound="GVData_RowDataBound" PageSize="15"
+                    width="100%" border="0" cellspacing="1" cellpadding="1" CssClass="hlbdata-list">
+                    <AlternatingRowStyle BackColor="WhiteSmoke" />
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Label ID="LabVisible" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "ID")%>'
+                                    Visible="False"></asp:Label><asp:CheckBox ID="CheckSelect" runat="server" />
+                            </ItemTemplate>
+                            <HeaderStyle Width="30px" />
+                            <HeaderTemplate>
+                                <input id="CheckBoxAll" onclick="CheckAll()" type="checkbox" />
+                            </HeaderTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="信息主题">
+                            <ItemTemplate>
+                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="True" NavigateUrl='<%# "GongGaoView.aspx?ID="+ DataBinder.Eval(Container.DataItem, "ID")%>'><%# DataBinder.Eval(Container.DataItem, "TitleStr")%></asp:HyperLink>
+                            </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Left" />
+                        </asp:TemplateField>
+                          <asp:BoundField DataField="NoticeType" HeaderText="文件类型">
+                          
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="组织">
+                          
+                        </asp:BoundField>
+                         <asp:BoundField HeaderText="所属林场">
+                          
+                        </asp:BoundField>
+                         <asp:BoundField DataField="TypeStr" HeaderText="电子围栏名称">
+                          
+                        </asp:BoundField>
+                         <asp:BoundField DataField="ZT" HeaderText="状态">
+                          
+                        </asp:BoundField>
+                          <asp:BoundField DataField="TrueName" HeaderText="发布人">
+                            <ItemStyle Width="130px" />
+                        </asp:BoundField>
+                         <asp:BoundField HeaderText="阅读状态">
+                          
+                        </asp:BoundField>
+                        <asp:BoundField DataField="UserBuMen" HeaderText="收阅人员"></asp:BoundField>
+                        <asp:BoundField DataField="TimeStr" HeaderText="发布时间" DataFormatString="{0:yyyy-MM-dd}"
+                            HtmlEncode="False">
+                            <ItemStyle Width="150px" />
+                        </asp:BoundField>
+                    </Columns>
+                    <PagerSettings Visible="False" />
+                    <RowStyle HorizontalAlign="Center" Height="25px" />
+                    <EmptyDataTemplate>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <th scope="col">信息主题</th>
+                                <th scope="col">文件类型</th>
+                                <th scope="col">电子围栏名称</th>
+                                <th scope="col">状态</th>
+                                <th scope="col" Width="130px">发布人</th>
+                                <th scope="col" Width="130px">收阅人员</th>
+                                <th scope="col" Width="130px">发布人</th>
+                                <th scope="col"  Width="150px">发布时间</th>
+
+                            </tr>
+                            <tr>
+                                <td align="center"colspan="8" style="border-right: black 1px; border-top: black 1px; border-left: black 1px;
+                                    border-bottom: black 1px; background-color: whitesmoke;">
+                                    该列表中暂时无数据！
+                                </td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+                </asp:GridView>
+            </td>
+        </tr>
+          <tr>
+            <td>
+             <div class="hlb-pagesize">
+                   	  <ul>
+                        	<li> <asp:Button ID="BtnFirst"  runat="server" CommandName="First" Text="首页" CssClass="hlb-pagebtn" OnClick="PagerButtonClick" /></li>
+                            <li><asp:Button ID="BtnPre"  runat="server" CommandName="Pre" Text="上一页" CssClass="hlb-pagebtn" OnClick="PagerButtonClick" /></li>
+                            <li><asp:Button ID="BtnNext"  runat="server" CommandName="Next" Text="下一页" CssClass="hlb-pagebtn" OnClick="PagerButtonClick" /></li>
+                            <li><asp:Button ID="BtnLast"  runat="server" CommandName="Last" Text="最后一页" CssClass="hlb-pagebtn" OnClick="PagerButtonClick" /></li>
+                            <li>当前第<asp:Label ID="LabCurrentPage" runat="server" Text="Label"></asp:Label>页/
+                                总共<asp:Label ID="LabPageSum" runat="server" Text="Label"></asp:Label>页</li>
+
+                            <li>每页<asp:TextBox ID="TxtPageSize" runat="server"  CssClass="hlb-pagesizenum">15</asp:TextBox> 行 &nbsp;
+                            </li>
+                              <li> 转到第<asp:TextBox ID="GoPage" runat="server" CssClass="hlb-pagesizenum" >1</asp:TextBox>页&nbsp;</li>
+                            <li><asp:Button ID="ButtonGo" runat="server" CssClass="hlb-pagesizebtn" OnClick="ButtonGo_Click" OnClientClick="javascript:return CheckValuePiece();" Text="GO"></asp:Button></li>
+                        </ul>
+                  </div>
+            </td>
+          </tr>
+     </table>
+ </div>
+        </div>
+            </td>
+        </tr>
+    </table>
+  
+          </div>
+        
+    </form>
+</body>
+</html>

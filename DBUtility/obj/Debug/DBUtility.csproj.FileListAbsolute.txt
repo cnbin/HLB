@@ -1,0 +1,5 @@
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\DBUtility\bin\Debug\DBUtility.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\DBUtility\bin\Debug\DBUtility.pdb
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\DBUtility\obj\Debug\DBUtility.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\DBUtility\obj\Debug\DBUtility.pdb

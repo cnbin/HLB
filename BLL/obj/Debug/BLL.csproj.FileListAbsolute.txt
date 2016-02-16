@@ -1,0 +1,5 @@
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Web\Bin\BLL.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Web\Bin\BLL.pdb
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\BLL\obj\Debug\BLL.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\BLL\obj\Debug\BLL.pdb

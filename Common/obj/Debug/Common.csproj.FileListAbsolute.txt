@@ -1,0 +1,10 @@
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\Common.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\Common.pdb
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\COM.Excel.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\DBUtility.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\Excel.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\bin\Debug\DBUtility.pdb
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\obj\Debug\Common.dll
+C:\Users\apple\Documents\Visual Studio 2012\Projects\HLB\Common\obj\Debug\Common.pdb
